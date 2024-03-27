@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { ReactNode } from "react";
-import { Inter } from "next/font/google";
+
+import { cn } from "@/common/libs/cn";
+
+import { gintoNord, ggSans, notoSans } from "@/common/styles/fonts";
 
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +19,11 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(gintoNord.variable, ggSans.variable, notoSans.variable)}
+      >
+        {children}
+      </body>
     </html>
   );
 }
